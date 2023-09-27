@@ -75,7 +75,7 @@ class Board {
     }
 
     maskStrictlyHigher(v) {
-        return this.allValues ^ (1 << (v - 1));
+        return this.allValues ^ this.maskLowerOrEqual(v);
     }
 
     maskLowerOrEqual(v) {
@@ -83,7 +83,7 @@ class Board {
     }
 
     maskHigherOrEqual(v) {
-        return this.allValues ^ ((1 << v) - 1);
+        return this.allValues ^ this.maskStrictlyLower(v);
     }
 
     maskBetweenInclusive(v1, v2) {
