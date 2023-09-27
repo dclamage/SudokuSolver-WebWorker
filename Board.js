@@ -267,6 +267,19 @@ class Board {
         return valid;
     }
 
+    seenCells(cellIndex) {
+        return this.regions.reduce((cells, region) => {
+            if (!region.cells.includes(cellIndex)) return cells
+
+            return [
+                ...cells,
+                ...region.cells.filter(
+                    (check) => check !== cellIndex && !cells.includes(check)
+                )
+            ]
+        }, [])
+    }
+
     isGroup(cells) {
         for (let i0 = 0; i0 < cells.length - 1; i0++) {
             const cell0 = cells[i0];
