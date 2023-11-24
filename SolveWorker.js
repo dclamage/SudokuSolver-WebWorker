@@ -12,6 +12,7 @@ importScripts(
     '/Solver/Constraint/GeneralCellPairConstraint.js',
     '/Solver/Constraint/KillerCageConstraint.js',
     '/Solver/Constraint/RegionSumLinesConstraint.js',
+    '/Solver/Constraint/ExtraRegionConstraint.js',
 
     // Logical Steps
     '/Solver/LogicalStep/LogicalStep.js',
